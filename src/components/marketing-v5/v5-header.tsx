@@ -2,7 +2,6 @@
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { GrubShelfLogoLockup } from "@/components/brand/grubshelf-logo-lockup";
 import { resolveAppStoreUrl } from "@/lib/marketing-nav";
@@ -50,14 +49,16 @@ export function V5Header() {
           ))}
         </nav>
 
-        <Link
+        <a
           href={appUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 font-sans text-sm font-semibold text-white transition hover:opacity-90"
           style={{ backgroundColor: V5.primary }}
         >
           Join beta
           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-        </Link>
+        </a>
       </div>
     </motion.header>
   );

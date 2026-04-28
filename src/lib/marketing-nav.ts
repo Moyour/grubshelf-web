@@ -14,8 +14,10 @@ export function getFooterLegalLinks(): MarketingNavLink[] {
   ];
 }
 
-/** Use for App Store badge href; falls back to `#` when unset or blank. */
+const DEFAULT_APP_URL = "https://testflight.apple.com/join/8M8EJsUE";
+
+/** Use for App Store badge href; falls back to TestFlight beta link when unset or blank. */
 export function resolveAppStoreUrl(envValue: string | undefined): string {
   const v = envValue?.trim();
-  return v && v.length > 0 ? v : "#";
+  return v && v.length > 0 ? v : DEFAULT_APP_URL;
 }

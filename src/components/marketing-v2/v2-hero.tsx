@@ -162,13 +162,15 @@ export function V2Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Link
+          <a
             href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gs-accent px-8 py-4 font-sans text-[15px] font-semibold text-gs-accent-text transition-transform hover:scale-[1.03] active:scale-[0.98]"
           >
             <span className="pointer-events-none absolute inset-0 rounded-xl bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
             <span className="relative">Join the Beta</span>
-          </Link>
+          </a>
           <Link
             href="/#vf-features"
             className="inline-flex items-center justify-center rounded-xl border-2 border-gs-border px-8 py-4 font-sans text-[15px] font-semibold text-gs-text-primary transition-colors hover:border-gs-text-primary"
