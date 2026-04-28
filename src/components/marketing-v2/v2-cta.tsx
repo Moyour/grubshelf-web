@@ -246,7 +246,7 @@ export function V2Cta() {
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 />
               ) : null}
-              <span className="relative">Join the Beta</span>
+              <span className="relative">Try the Beta</span>
             </Link>
             <p className="text-center font-sans text-[13px] leading-snug text-gs-text-tertiary sm:max-w-[13.5rem] sm:self-center sm:text-left lg:self-auto">
               Requires{" "}

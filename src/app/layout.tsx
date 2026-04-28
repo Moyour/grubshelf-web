@@ -138,7 +138,7 @@ const faqJsonLd = {
       name: "How do I join the beta?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tap 'Join the beta' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
+        text: "Tap 'Try the Beta' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
       },
     },
     {

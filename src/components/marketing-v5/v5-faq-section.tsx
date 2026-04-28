@@ -7,7 +7,7 @@ import { V5 } from "./v5-tokens";
 const FAQ_ITEMS = [
   {
     q: "How do I join the beta?",
-    a: "Tap 'Join the beta' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
+    a: "Tap 'Try the Beta' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
   },
   {
     q: "Is my data private?",

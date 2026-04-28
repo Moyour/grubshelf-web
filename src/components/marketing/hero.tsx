@@ -42,7 +42,7 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <MarketingButtonLink href={appUrl} variant="accent" size="default">
-              Join the Beta
+              Try the Beta
             </MarketingButtonLink>
             <MarketingButtonLink
               href="/#chapter-problem"

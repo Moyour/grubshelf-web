@@ -50,7 +50,7 @@ export function FinalCta() {
         </p>
         <div className="mt-10">
           <MarketingButtonLink href={appUrl} variant="accent" size="default">
-            Join the Beta
+            Try the Beta
           </MarketingButtonLink>
         </div>
       </ScrollReveal>

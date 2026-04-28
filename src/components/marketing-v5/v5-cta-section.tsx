@@ -57,7 +57,7 @@ export function V5CtaSection() {
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
             style={{ backgroundColor: V5.primary }}
           >
-            Join the beta
+            Try the Beta
             <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
         </motion.div>

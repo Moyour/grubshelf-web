@@ -29,7 +29,7 @@ export function PrimaryHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
           <MarketingButtonLink href={appUrl} variant="primary" size="small">
-            Join Beta
+            Try the Beta
           </MarketingButtonLink>
         </div>
       </div>

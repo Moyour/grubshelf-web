@@ -56,7 +56,7 @@ export function V5Header() {
           className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 font-sans text-sm font-semibold text-white transition hover:opacity-90"
           style={{ backgroundColor: V5.primary }}
         >
-          Join beta
+          Try the Beta
           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
         </a>
       </div>
