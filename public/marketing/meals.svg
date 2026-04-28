@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="640" viewBox="0 0 320 640" fill="none">
+  <rect width="320" height="640" rx="36" fill="#f7f5f0"/>
+  <rect x="24" y="52" width="272" height="40" rx="8" fill="#ffffff"/>
+  <text x="40" y="78" font-family="system-ui,sans-serif" font-size="11" fill="#0a4d3e" font-weight="600">MEALS THIS WEEK</text>
+  <rect x="24" y="112" width="272" height="96" rx="14" fill="#ffffff" stroke="#e8e6de"/>
+  <text x="40" y="142" font-family="system-ui,sans-serif" font-size="10" fill="#888780" letter-spacing="0.08em">MON</text>
+  <text x="40" y="168" font-family="system-ui,sans-serif" font-size="16" fill="#1a1a18" font-weight="600">Red curry</text>
+  <text x="40" y="190" font-family="system-ui,sans-serif" font-size="11" fill="#5f5e5a">Coconut milk � rice � veg</text>
+  <rect x="24" y="224" width="272" height="96" rx="14" fill="#e1f5ee" opacity="0.6" stroke="#1d9e75" stroke-opacity="0.35"/>
+  <text x="40" y="254" font-family="system-ui,sans-serif" font-size="10" fill="#0a4d3e" letter-spacing="0.08em">TUE</text>
+  <text x="40" y="280" font-family="system-ui,sans-serif" font-size="16" fill="#1a1a18" font-weight="600">Sheet-pan chicken</text>
+</svg>

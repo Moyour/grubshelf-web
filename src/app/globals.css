@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gs-background: #f7f5f0;
+  --gs-surface: #ffffff;
+  --gs-surface-secondary: #f2f0ea;
+  --gs-text-primary: #1a1a18;
+  --gs-text-secondary: #5f5e5a;
+  --gs-text-tertiary: #888780;
+  --gs-text-inverse: #e1f5ee;
+  --gs-border: #e8e6de;
+  --gs-border-secondary: #d3d1c7;
+  --gs-brand-primary: #0a4d3e;
+  --gs-brand-primary-bg: #0a4d3e;
+  --gs-accent: #e8a020;
+  --gs-accent-text: #412402;
+  --gs-accent-surface: #faeeda;
+  --gs-success: #1d9e75;
+  --gs-success-surface: #e1f5ee;
+  --gs-warning: #ba7517;
+  --gs-warning-surface: #faeeda;
+  --gs-danger: #a32d2d;
+  --gs-danger-surface: #fcebeb;
+  --gs-nav-active: #0a4d3e;
+  --gs-nav-inactive: #b4b2a9;
+  --gs-input-background: #ffffff;
+  --gs-input-border: #d3d1c7;
+  --gs-input-border-focus: #1d9e75;
+  --gs-input-placeholder: #b4b2a9;
+  --gs-shimmer: #e8e6de;
+  --gs-teal-deep: #04342c;
+  --gs-teal-mid: #0f6e56;
+  --gs-mesh-warm: #faeeda;
+}
+
+.dark {
+  --gs-background: #04342c;
+  --gs-surface: #085041;
+  --gs-surface-secondary: #04342c;
+  --gs-text-primary: #e1f5ee;
+  --gs-text-secondary: #5dcaa5;
+  --gs-text-tertiary: #2ab88a;
+  --gs-text-inverse: #04342c;
+  --gs-border: #0f6e56;
+  --gs-border-secondary: #1d9e75;
+  --gs-brand-primary: #e1f5ee;
+  --gs-brand-primary-bg: #0a4d3e;
+  --gs-accent: #e8a020;
+  --gs-accent-text: #412402;
+  --gs-accent-surface: #412402;
+  --gs-success: #5dcaa5;
+  --gs-success-surface: rgba(29, 158, 117, 0.15);
+  --gs-warning: #fac775;
+  --gs-warning-surface: rgba(232, 160, 32, 0.12);
+  --gs-danger: #f09595;
+  --gs-danger-surface: rgba(226, 75, 74, 0.12);
+  --gs-nav-active: #e1f5ee;
+  --gs-nav-inactive: #0f6e56;
+  --gs-input-background: #04342c;
+  --gs-input-border: #0f6e56;
+  --gs-input-border-focus: #5dcaa5;
+  --gs-input-placeholder: #0f6e56;
+  --gs-shimmer: #0f6e56;
+  --gs-teal-deep: #021f1a;
+  --gs-teal-mid: #085041;
+  --gs-mesh-warm: #412402;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-gs-background text-gs-text-primary antialiased;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--gs-accent) 35%, transparent);
+  color: var(--gs-accent-text);
+}
+
+.dark ::selection {
+  background-color: color-mix(in srgb, var(--gs-success) 40%, transparent);
+  color: var(--gs-text-primary);
+}
+
+@layer components {
+  .gs-grain {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .dark .gs-grain {
+    mix-blend-mode: soft-light;
+    opacity: 0.22;
+  }
+
+  .gs-hero-mesh {
+    background-color: var(--gs-background);
+    background-image:
+      radial-gradient(
+        120% 80% at 100% -10%,
+        color-mix(in srgb, var(--gs-accent) 22%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        90% 70% at -15% 40%,
+        color-mix(in srgb, var(--gs-brand-primary-bg) 18%, transparent),
+        transparent 50%
+      ),
+      radial-gradient(
+        60% 50% at 85% 75%,
+        color-mix(in srgb, var(--gs-success) 14%, transparent),
+        transparent 45%
+      );
+  }
+
+  .dark .gs-hero-mesh {
+    background-image:
+      radial-gradient(
+        100% 80% at 110% 0%,
+        color-mix(in srgb, var(--gs-teal-mid) 55%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        80% 60% at -10% 30%,
+        color-mix(in srgb, var(--gs-accent) 15%, transparent),
+        transparent 50%
+      ),
+      radial-gradient(
+        70% 50% at 70% 100%,
+        color-mix(in srgb, var(--gs-teal-deep) 80%, transparent),
+        transparent 50%
+      );
+  }
+
+  .gs-glow-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--gs-accent) 70%, transparent),
+      color-mix(in srgb, var(--gs-success) 50%, transparent),
+      transparent
+    );
+  }
+
+  /* Scroll narrative: chapter rhythm */
+  .gs-chapter {
+    scroll-margin-top: 6rem;
+  }
+
+  .gs-cinematic-hero .gs-grain {
+    opacity: 0.28;
+  }
+
+  .dark .gs-cinematic-hero .gs-grain {
+    opacity: 0.18;
+  }
+
+  /* Intersection-driven reveal (see ScrollReveal) */
+  .gs-scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 1.75rem, 0);
+    transition:
+      opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .gs-scroll-reveal[data-visible="true"] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gs-scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Below-hero sections: echo mesh without competing with the hero */
+  .gs-section-atmosphere {
+    background-color: var(--gs-background);
+    background-image: radial-gradient(
+        80% 55% at 100% 0%,
+        color-mix(in srgb, var(--gs-accent) 8%, transparent),
+        transparent 50%
+      ),
+      radial-gradient(
+        70% 50% at 0% 100%,
+        color-mix(in srgb, var(--gs-brand-primary-bg) 6%, transparent),
+        transparent 55%
+      );
+  }
+
+  .dark .gs-section-atmosphere {
+    background-image: radial-gradient(
+        75% 50% at 95% 5%,
+        color-mix(in srgb, var(--gs-teal-mid) 22%, transparent),
+        transparent 52%
+      ),
+      radial-gradient(
+        65% 45% at 5% 95%,
+        color-mix(in srgb, var(--gs-accent) 6%, transparent),
+        transparent 50%
+      );
+  }
+
+  .gs-section-surface-wash {
+    background-color: var(--gs-surface-secondary);
+    background-image: radial-gradient(
+      120% 80% at 50% -20%,
+      color-mix(in srgb, var(--gs-accent) 7%, transparent),
+      transparent 45%
+    );
+  }
+
+  .dark .gs-section-surface-wash {
+    background-image: radial-gradient(
+      100% 70% at 50% 0%,
+      color-mix(in srgb, var(--gs-accent) 10%, transparent),
+      transparent 50%
+    );
+  }
+
+  .gs-wordmark {
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Fridge list story: brushed fridge metal */
+  .gs-fridge-metal {
+    background:
+      linear-gradient(
+        125deg,
+        color-mix(in srgb, var(--gs-text-primary) 8%, transparent) 0%,
+        transparent 45%,
+        color-mix(in srgb, var(--gs-text-primary) 5%, transparent) 100%
+      ),
+      linear-gradient(
+        180deg,
+        var(--gs-surface-secondary) 0%,
+        var(--gs-background) 50%,
+        var(--gs-surface-secondary) 100%
+      );
+  }
+
+  .dark .gs-fridge-metal {
+    background:
+      linear-gradient(
+        125deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 100%
+      ),
+      linear-gradient(180deg, var(--gs-teal-deep) 0%, var(--gs-background) 100%);
+  }
+}

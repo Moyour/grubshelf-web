@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GrubShelf — app icon as lead mark (design sheet)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #1a1a18;
+        --paper: #f0f0ee;
+        --muted: #5c5c58;
+        --accent: #e8a020;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Outfit, system-ui, sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.5;
+        padding: 2.5rem 1.5rem 4rem;
+      }
+      .wrap {
+        max-width: 56rem;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.35rem;
+      }
+      .note {
+        font-size: 0.875rem;
+        color: var(--muted);
+        max-width: 42rem;
+        margin: 0 0 2rem;
+      }
+      .panel {
+        background: #fff;
+        border: 1px solid rgba(26, 26, 24, 0.08);
+        border-radius: 12px;
+        padding: 1.5rem 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+      .panel h2 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        margin: 0 0 1rem;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+      }
+      .wordmark {
+        font-family: Outfit, system-ui, sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        text-transform: lowercase;
+        color: var(--ink);
+        line-height: 1;
+      }
+      /* iOS-style squircle preview (approximate) */
+      .app-lead {
+        display: block;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-radius: 22%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      .gold-dot {
+        flex-shrink: 0;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 14px rgba(232, 160, 32, 0.45);
+      }
+      .compare {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      .compare-item h3 {
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin: 0 0 0.65rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>App icon as the mark before “grubshelf”</h1>
+      <p class="note">
+        Design-only sheet. Not linked from the marketing site. Source icon:
+        <code>grubshelf-app-icon-1024.png</code> (copy of iOS App Store size). Open this file via
+        the dev server so images load, e.g.
+        <code>http://localhost:3010/brand/review/lockup-preview-app-icon-period.html</code>
+      </p>
+
+      <div class="panel">
+        <h2>Header scale (like site nav)</h2>
+        <div class="row">
+          <img
+            class="app-lead"
+            src="grubshelf-app-icon-1024.png"
+            alt=""
+            width="10"
+            height="10"
+          />
+          <span class="wordmark" style="font-size: 1.25rem">grubshelf</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Medium — app list / settings</h2>
+        <div class="row">
+          <img
+            class="app-lead"
+            src="grubshelf-app-icon-1024.png"
+            alt=""
+            width="32"
+            height="32"
+          />
+          <span class="wordmark" style="font-size: 1.75rem">grubshelf</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Lockup scale (~ prior gold circle weight)</h2>
+        <div class="row">
+          <img
+            class="app-lead"
+            src="grubshelf-app-icon-1024.png"
+            alt=""
+            width="80"
+            height="80"
+          />
+          <span class="wordmark" style="font-size: 3.25rem">grubshelf</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Compare at same box (80×80)</h2>
+        <div class="compare">
+          <div class="compare-item">
+            <h3>Current lockup — amber circle</h3>
+            <div class="row">
+              <span class="gold-dot" style="width: 80px; height: 80px" aria-hidden="true"></span>
+              <span class="wordmark" style="font-size: 3.25rem">grubshelf</span>
+            </div>
+          </div>
+          <div class="compare-item">
+            <h3>Trial — app icon as lead</h3>
+            <div class="row">
+              <img
+                class="app-lead"
+                src="grubshelf-app-icon-1024.png"
+                alt=""
+                width="80"
+                height="80"
+              />
+              <span class="wordmark" style="font-size: 3.25rem">grubshelf</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

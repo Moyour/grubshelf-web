@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="640" viewBox="0 0 320 640" fill="none">
+  <rect width="320" height="640" rx="36" fill="#085041"/>
+  <rect x="24" y="52" width="272" height="40" rx="8" fill="#04342c"/>
+  <text x="40" y="78" font-family="system-ui,sans-serif" font-size="11" fill="#fac775" font-weight="600">EXPIRING SOON</text>
+  <rect x="24" y="112" width="272" height="88" rx="14" fill="#0f6e56" opacity="0.5"/>
+  <circle cx="60" cy="156" r="22" stroke="#e8a020" stroke-width="3" fill="none" opacity="0.9"/>
+  <text x="52" y="162" font-family="system-ui,sans-serif" font-size="12" fill="#e1f5ee" font-weight="600">3d</text>
+  <text x="104" y="148" font-family="system-ui,sans-serif" font-size="15" fill="#e1f5ee" font-weight="600">Greek yogurt</text>
+  <text x="104" y="170" font-family="system-ui,sans-serif" font-size="11" fill="#5dcaa5">Use by Fri</text>
+  <rect x="24" y="216" width="272" height="88" rx="14" fill="#04342c" stroke="#0f6e56"/>
+  <text x="104" y="252" font-family="system-ui,sans-serif" font-size="15" fill="#e1f5ee">Spinach</text>
+  <text x="104" y="274" font-family="system-ui,sans-serif" font-size="11" fill="#2ab88a">Fresh  5d left</text>
+</svg>
