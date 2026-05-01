@@ -46,6 +46,14 @@ const V5ReliefSection = dynamic(
   { loading: () => <V5FallbackDark /> },
 );
 
+const V5NewsletterSection = dynamic(
+  () =>
+    import("@/components/marketing-v5/v5-newsletter-section").then((m) => ({
+      default: m.V5NewsletterSection,
+    })),
+  { loading: () => <V5FallbackDark /> },
+);
+
 const V5FaqSection = dynamic(
   () =>
     import("@/components/marketing-v5/v5-faq-section").then((m) => ({
@@ -81,6 +89,7 @@ export default function VfPageClient() {
         <V5ReliefSection />
         <V2Social />
         <V5FaqSection />
+        <V5NewsletterSection />
         <V5CtaSection />
       </main>
       <footer
