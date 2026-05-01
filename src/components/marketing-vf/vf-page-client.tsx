@@ -62,13 +62,6 @@ const V5FaqSection = dynamic(
   { loading: () => <V5FallbackDark /> },
 );
 
-const V5CtaSection = dynamic(
-  () =>
-    import("@/components/marketing-v5/v5-cta-section").then((m) => ({
-      default: m.V5CtaSection,
-    })),
-  { loading: () => <V5FallbackDark /> },
-);
 
 export default function VfPageClient() {
   return (
@@ -90,7 +83,6 @@ export default function VfPageClient() {
         <V2Social />
         <V5FaqSection />
         <V5NewsletterSection />
-        <V5CtaSection />
       </main>
       <footer
         className="border-t border-white/10 px-6 py-8 text-center"
