@@ -57,7 +57,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "GrubShelf — Your kitchen, sorted",
+    default: "GrubShelf — Groceries without the guesswork",
     template: "%s | GrubShelf",
   },
   description,
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "GrubShelf — Your kitchen, sorted",
+    title: "GrubShelf — Groceries without the guesswork",
     description,
     url: "/",
     siteName: "GrubShelf",
@@ -93,13 +93,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "GrubShelf — Your kitchen, sorted",
+        alt: "GrubShelf — Groceries without the guesswork",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GrubShelf — Your kitchen, sorted",
+    title: "GrubShelf — Groceries without the guesswork",
     description,
     images: ["/og.png"],
   },
@@ -138,7 +138,7 @@ const faqJsonLd = {
       name: "How do I join the beta?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tap 'Try the Beta' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
+        text: "Tap 'Download for iOS' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
       },
     },
     {
