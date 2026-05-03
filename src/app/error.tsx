@@ -14,7 +14,11 @@ export default function Error({
     console.error(error);
   }, [error]);
 
-  const message = getSerializableErrorMessage(error);
+  const messageRaw = getSerializableErrorMessage(error);
+  const message =
+    typeof messageRaw === "string"
+      ? messageRaw
+      : "An unexpected error occurred.";
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[var(--gs-background)] px-6 text-[var(--gs-text-primary)]">

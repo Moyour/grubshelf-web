@@ -29,4 +29,14 @@ describe("getSerializableErrorMessage", () => {
     const ev = new ErrorEvent("error", { message: "failed to load" });
     expect(getSerializableErrorMessage(ev)).toBe("failed to load");
   });
+
+  it("coerces validation-style objects (API / thrown payloads)", () => {
+    expect(
+      getSerializableErrorMessage({
+        type: "value_error",
+        loc: ["body", "email"],
+        msg: "Invalid email",
+      }),
+    ).toBe("Invalid email");
+  });
 });

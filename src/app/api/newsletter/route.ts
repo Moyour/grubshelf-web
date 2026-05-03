@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { upstreamErrorToMessage } from "@/lib/newsletter-errors";
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(req: NextRequest) {
@@ -36,21 +38,24 @@ export async function POST(req: NextRequest) {
         Authorization: `Token ${apiKey}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email_address: email, type: "regular" }),
     });
 
     if (res.ok) {
       return NextResponse.json({ ok: true });
     }
 
-    const data = await res.json().catch(() => null);
+    const data = (await res.json().catch(() => null)) as
+      | Record<string, unknown>
+      | null;
 
     if (res.status === 409) {
       return NextResponse.json({ ok: true, alreadySubscribed: true });
     }
 
+    const rawDetail = data?.detail ?? data?.error;
     return NextResponse.json(
-      { error: data?.detail ?? "Something went wrong. Please try again." },
+      { error: upstreamErrorToMessage(rawDetail) },
       { status: res.status },
     );
   } catch {

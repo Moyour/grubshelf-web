@@ -9,7 +9,11 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const message = getSerializableErrorMessage(error);
+  const messageRaw = getSerializableErrorMessage(error);
+  const message =
+    typeof messageRaw === "string"
+      ? messageRaw
+      : "An unexpected error occurred.";
 
   return (
     <html lang="en" className="dark">
