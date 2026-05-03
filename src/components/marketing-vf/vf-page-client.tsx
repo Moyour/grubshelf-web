@@ -1,34 +1,18 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { V2Header } from "@/components/marketing-v2/v2-header";
 import { V2Hero } from "@/components/marketing-v2/v2-hero";
-import { V2Social } from "@/components/marketing-v2/v2-social";
 import { V2Story } from "@/components/marketing-v2/v2-story";
 import {
   V5FallbackAccent,
   V5FallbackDark,
-  V5FallbackWhite,
 } from "@/components/marketing-v5/v5-route-fallbacks";
 import { V5 } from "@/components/marketing-v5/v5-tokens";
-import { getFooterLegalLinks } from "@/lib/marketing-nav";
-
-const V5StorySection = dynamic(
-  () =>
-    import("@/components/marketing-v5/v5-story-section").then((m) => ({
-      default: m.V5StorySection,
-    })),
-  { loading: () => <V5FallbackAccent /> },
-);
-
-const V5SolutionSection = dynamic(
-  () =>
-    import("@/components/marketing-v5/v5-solution-section").then((m) => ({
-      default: m.V5SolutionSection,
-    })),
-  { loading: () => <V5FallbackWhite /> },
-);
+import { GRUBSHELF_APP_ICON_SRC } from "@/lib/grubshelf-brand";
+import { getFooterLegalLinks, resolveAppStoreUrl } from "@/lib/marketing-nav";
 
 const V5ProductSection = dynamic(
   () =>
@@ -36,14 +20,6 @@ const V5ProductSection = dynamic(
       default: m.V5ProductSection,
     })),
   { loading: () => <V5FallbackAccent /> },
-);
-
-const V5ReliefSection = dynamic(
-  () =>
-    import("@/components/marketing-v5/v5-relief-section").then((m) => ({
-      default: m.V5ReliefSection,
-    })),
-  { loading: () => <V5FallbackDark /> },
 );
 
 const V5NewsletterSection = dynamic(
@@ -74,37 +50,97 @@ export default function VfPageClient() {
       <main id="vf-main" className="overflow-x-hidden">
         <V2Hero />
         <V2Story />
-        <V5StorySection />
-        <V5SolutionSection />
         <div id="vf-features" className="scroll-mt-28">
           <V5ProductSection />
         </div>
-        <V5ReliefSection />
-        <V2Social />
         <V5FaqSection />
         <V5NewsletterSection />
       </main>
       <footer
-        className="border-t border-white/10 px-6 py-8 text-center"
+        className="border-t border-white/10 px-6 py-12 md:py-16"
         style={{ backgroundColor: V5.secondary }}
       >
-        <p className="font-sans text-xs text-white/40">
-          Grub Shelf — a quieter way through the store.
-        </p>
-        <nav
-          className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1"
-          aria-label="Legal"
-        >
-          {getFooterLegalLinks().map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="font-sans text-xs font-medium text-white/45 underline-offset-4 hover:text-white/70 hover:underline"
-            >
-              {item.label}
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
+          {/* Brand column */}
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <Link href="/" className="flex items-center gap-2.5">
+              <Image
+                src={GRUBSHELF_APP_ICON_SRC}
+                alt=""
+                width={128}
+                height={128}
+                className="h-9 w-9 rounded-[22%] object-cover"
+              />
+              <span className="gs-wordmark text-2xl font-semibold lowercase leading-none tracking-tight text-white/90">
+                grubshelf
+              </span>
             </Link>
-          ))}
-        </nav>
+            <p className="max-w-xs text-center font-sans text-sm leading-relaxed text-white/40 md:text-left">
+              A quieter way through the store.
+            </p>
+          </div>
+
+          {/* Links columns */}
+          <div className="flex gap-16 text-center md:text-left">
+            <div>
+              <h4 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-white/30">
+                Product
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/#vf-features"
+                    className="font-sans text-sm text-white/50 transition hover:text-white/80"
+                  >
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#v5-faq"
+                    className="font-sans text-sm text-white/50 transition hover:text-white/80"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href={resolveAppStoreUrl(process.env.NEXT_PUBLIC_APP_STORE_URL)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-sm text-white/50 transition hover:text-white/80"
+                  >
+                    Try the Beta
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-white/30">
+                Legal
+              </h4>
+              <ul className="space-y-2">
+                {getFooterLegalLinks().map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="font-sans text-sm text-white/50 transition hover:text-white/80"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mx-auto mt-10 max-w-5xl border-t border-white/[0.06] pt-6 text-center md:text-left">
+          <p className="font-sans text-xs text-white/25">
+            &copy; {new Date().getFullYear()} Grubshelf. All rights reserved.
+          </p>
+        </div>
       </footer>
     </>
   );

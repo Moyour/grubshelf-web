@@ -1,11 +1,29 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { LayoutList, PieChart, Refrigerator } from "lucide-react";
+import { ClipboardList, Eye, LayoutList, PieChart, Refrigerator, TrendingDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import { type ComponentType, useState } from "react";
 import { V5FallbackDemoPanel } from "./v5-route-fallbacks";
 import { V5 } from "./v5-tokens";
+
+const pillars = [
+  {
+    icon: Eye,
+    title: "See what you have",
+    desc: "Your pantry, with expiry dates that actually mean something. No more mystery containers.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Carry the list",
+    desc: "One shared list that lives in your pocket — not on the fridge, not in a note you can't find.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Spot the waste",
+    desc: "Simple spend tracking that shows the pattern. Enough to change the habit, not enough to stress you out.",
+  },
+] as const;
 
 const V5PantryDemoLazy = dynamic(
   () => import("./v5-pantry-demo").then((m) => ({ default: m.V5PantryDemo })),
@@ -80,35 +98,58 @@ export function V5ProductSection() {
       style={{ backgroundColor: V5.accent, color: V5.secondary }}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7 }}
-            className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-black/40"
-          >
-            Product
-          </motion.p>
+        <div className="mb-12 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="text-balance font-sans text-3xl font-bold tracking-tight md:text-5xl"
+            className="text-balance font-sans text-4xl font-bold tracking-tight md:text-5xl"
           >
-            Touch the parts that usually live in your head.
+            So we built something better.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.75, delay: 0.08 }}
-            className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-black/50 md:text-lg"
+            className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-black/50 md:text-lg"
           >
-            Pantry, shopping list, and expense tracking — each demo is a tiny rehearsal for a calmer
-            week.
+            One calm place for what you have, what you need, and what it actually costs.
           </motion.p>
+        </div>
+
+        <div className="mx-auto mb-16 grid max-w-4xl gap-6 md:grid-cols-3 md:gap-8">
+          {pillars.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{
+                  duration: 0.75,
+                  delay: i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="rounded-2xl border border-black/[0.06] bg-white/60 p-6 text-left md:p-8"
+              >
+                <span
+                  className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl text-white"
+                  style={{ backgroundColor: V5.primary }}
+                >
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="font-sans text-base font-semibold tracking-tight text-black md:text-lg">
+                  {p.title}
+                </h3>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-black/50">
+                  {p.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] lg:items-start lg:gap-12">
