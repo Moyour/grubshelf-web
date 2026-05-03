@@ -8,11 +8,38 @@ export const metadata: Metadata = {
   description:
     "GrubShelf privacy policy — how we handle your pantry, grocery, and meal planning data.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/privacy" },
+};
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3010";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Privacy Policy",
+      item: `${siteUrl}/privacy`,
+    },
+  ],
 };
 
 export default function PrivacyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <V2Header homeHref="/" featuresHref="/#vf-features" faqHref="/#v5-faq" />
       <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24">
         <Link

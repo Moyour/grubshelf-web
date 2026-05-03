@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrubShelf Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green: #1d9e75;
+    --deep: #04342c;
+    --cream: #faeeda;
+    --amber: #e8a020;
+    --danger: #a32d2d;
+    --warning: #ba7517;
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #888780;
+    --border: #e8e6de;
+    --border-secondary: #d3d1c7;
+    --brand-primary: #0a4d3e;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  /* Layout */
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  /* Header */
+  .hero {
+    background: var(--deep);
+    padding: 64px 32px;
+    text-align: center;
+    color: white;
+  }
+  .hero-icon {
+    width: 72px; height: 72px;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto 16px;
+  }
+  .hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
+  }
+  .hero-version {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 20px;
+  }
+
+  /* Section headings */
+  h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+  h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--deep);
+    margin: 32px 0 16px;
+  }
+  h3:first-of-type { margin-top: 0; }
+
+  /* Color swatches */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .swatch-color {
+    height: 80px;
+    position: relative;
+  }
+  .swatch-info {
+    padding: 12px 14px;
+  }
+  .swatch-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+  .swatch-hex {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+  }
+  .swatch-var {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+    opacity: 0.7;
+  }
+
+  /* Dark swatch grid */
+  .dark-grid-wrap {
+    background: var(--deep);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+  .dark-grid-wrap .swatch {
+    border-color: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+  }
+  .dark-grid-wrap .swatch-name { color: #e1f5ee; }
+  .dark-grid-wrap .swatch-hex { color: rgba(255,255,255,0.5); }
+  .dark-grid-wrap .swatch-var { color: rgba(255,255,255,0.35); }
+
+  /* Typography samples */
+  .type-sample {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 12px;
+  }
+  .type-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .type-inter { font-family: 'Inter', sans-serif; }
+  .type-outfit { font-family: 'Outfit', sans-serif; }
+  .type-mono { font-family: 'IBM Plex Mono', monospace; }
+  .type-hand { font-family: 'Patrick Hand', cursive; }
+
+  .weight-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 16px;
+  }
+  .weight-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 140px;
+    flex: 1;
+  }
+  .weight-item .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+
+  /* Logo grid */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .logo-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .logo-preview {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .logo-preview img {
+    max-height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .logo-preview.dark-bg {
+    background: var(--deep);
+  }
+  .logo-preview.light-bg {
+    background: var(--bg);
+  }
+  .logo-preview.white-bg {
+    background: #ffffff;
+  }
+  .logo-meta {
+    padding: 12px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .logo-meta-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .logo-meta-file {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+    word-break: break-all;
+  }
+
+  /* Icon specs */
+  .icon-spec {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+  .icon-spec img {
+    border-radius: 22%;
+    flex-shrink: 0;
+  }
+  .icon-spec-text { flex: 1; }
+  .icon-spec-text dt { font-weight: 600; font-size: 13px; color: var(--text-secondary); }
+  .icon-spec-text dd { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--text-primary); margin-bottom: 8px; }
+
+  /* Usage rules */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .rule-card {
+    border-radius: 12px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+  }
+  .rule-do {
+    background: #e1f5ee;
+    border-color: #1d9e75;
+  }
+  .rule-dont {
+    background: #fde8e8;
+    border-color: #a32d2d;
+  }
+  .rule-label {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .rule-do .rule-label { color: #1d9e75; }
+  .rule-dont .rule-label { color: #a32d2d; }
+  .rule-card li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  /* Button demos */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    min-height: 48px;
+  }
+  .btn-primary svg { width: 16px; height: 16px; fill: currentColor; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--deep);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    min-height: 48px;
+  }
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--amber);
+    color: var(--deep);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 6px;
+  }
+
+  /* Input demo */
+  .input-demo {
+    max-width: 400px;
+  }
+  .input-demo input {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-secondary);
+    background: #fff;
+    color: var(--text-primary);
+    outline: none;
+  }
+  .input-demo input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(29,158,117,0.15);
+  }
+  .input-demo input::placeholder {
+    color: rgba(0,0,0,0.25);
+  }
+
+  /* Card demo */
+  .card-demo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    max-width: 380px;
+    border-left: 4px solid var(--amber);
+  }
+  .card-demo h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 6px;
+  }
+  .card-demo p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Badge demo */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+  .badge-amber { background: rgba(232,160,32,0.12); color: var(--amber); }
+  .badge-green { background: rgba(29,158,117,0.12); color: var(--green); }
+  .badge-pill {
+    background: var(--amber);
+    color: var(--deep);
+    border-radius: 20px;
+    padding: 5px 14px;
+  }
+
+  /* Spacing table */
+  .spacing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .spacing-table th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-tertiary);
+    padding: 8px 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .spacing-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .spacing-table code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: rgba(0,0,0,0.04);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .radius-preview {
+    width: 48px;
+    height: 48px;
+    background: var(--green);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* Voice */
+  .voice-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .voice-card .label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .voice-card blockquote {
+    font-size: 16px;
+    color: var(--text-primary);
+    font-style: italic;
+    line-height: 1.6;
+    border-left: 3px solid var(--green);
+    padding-left: 16px;
+  }
+
+  /* Asset list */
+  .asset-list {
+    list-style: none;
+  }
+  .asset-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .asset-list li:last-child { border-bottom: none; }
+  .asset-list .file {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .asset-list .format {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding: 48px 20px; }
+    .hero-title { font-size: 28px; }
+    h2 { font-size: 24px; }
+    .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+    .logo-grid { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .icon-spec { flex-direction: column; text-align: center; }
+    .weight-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="hero">
+  <img src="grubshelf-app-icon-1024.png" alt="GrubShelf" class="hero-icon">
+  <div class="hero-title">grubshelf</div>
+  <div class="hero-sub">Brand Guide</div>
+  <div class="hero-version">v1.0 &mdash; May 2026</div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════ 1. COLOR PALETTE ═══════════ -->
+<section>
+  <h2>Color Palette</h2>
+  <p class="section-desc">The core palette balances warm and cool tones. Teal conveys trust and freshness; amber adds energy and warmth; cream keeps everything approachable.</p>
+
+  <h3>Primary Colors</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#04342c;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary &mdash; Deep Teal</div>
+        <div class="swatch-hex">#04342c</div>
+        <div class="swatch-var">Brand primary, backgrounds, headers, footers</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1d9e75;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Green</div>
+        <div class="swatch-hex">#1d9e75</div>
+        <div class="swatch-var">CTAs, success states, links</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#faeeda;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-hex">#faeeda</div>
+        <div class="swatch-var">Warm section backgrounds</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#e8a020;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Amber</div>
+        <div class="swatch-hex">#e8a020</div>
+        <div class="swatch-var">Accent, badges, highlights</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Extended Palette</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0a4d3e;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Brand Primary</div>
+        <div class="swatch-hex">#0a4d3e</div>
+        <div class="swatch-var">--gs-brand-primary</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0f6e56;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mid Teal</div>
+        <div class="swatch-hex">#0f6e56</div>
+        <div class="swatch-var">--gs-teal-mid</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#085041;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Teal Surface</div>
+        <div class="swatch-hex">#085041</div>
+        <div class="swatch-var">Email headers, dark cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#e1f5ee;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mint</div>
+        <div class="swatch-hex">#e1f5ee</div>
+        <div class="swatch-var">Success surfaces, dark mode text</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#f7f5f0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Background</div>
+        <div class="swatch-hex">#f7f5f0</div>
+        <div class="swatch-var">--gs-background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1a1a18;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Text Primary</div>
+        <div class="swatch-hex">#1a1a18</div>
+        <div class="swatch-var">--gs-text-primary</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#5f5e5a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Text Secondary</div>
+        <div class="swatch-hex">#5f5e5a</div>
+        <div class="swatch-var">--gs-text-secondary</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#888780;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Text Tertiary</div>
+        <div class="swatch-hex">#888780</div>
+        <div class="swatch-var">--gs-text-tertiary</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Status Colors</h3>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1d9e75;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Success</div>
+        <div class="swatch-hex">#1d9e75</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ba7517;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warning</div>
+        <div class="swatch-hex">#ba7517</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#a32d2d;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Danger</div>
+        <div class="swatch-hex">#a32d2d</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Dark Mode</h3>
+  <div class="dark-grid-wrap">
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#04342c;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Background</div>
+          <div class="swatch-hex">#04342c</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#085041;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Surface</div>
+          <div class="swatch-hex">#085041</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e1f5ee;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text Primary</div>
+          <div class="swatch-hex">#e1f5ee</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5dcaa5;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Text Secondary</div>
+          <div class="swatch-hex">#5dcaa5</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0f6e56;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Borders</div>
+          <div class="swatch-hex">#0f6e56</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e8a020;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Accent (same)</div>
+          <div class="swatch-hex">#e8a020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 2. TYPOGRAPHY ═══════════ -->
+<section>
+  <h2>Typography</h2>
+  <p class="section-desc">Four font families serve distinct roles. Inter handles all body text. Outfit provides personality for headings. IBM Plex Mono for technical content. Patrick Hand for warmth.</p>
+
+  <h3>Inter &mdash; Body &amp; UI</h3>
+  <div class="type-sample">
+    <div class="type-label">Inter 400 &middot; Body text</div>
+    <p class="type-inter" style="font-size:16px; font-weight:400;">Your kitchen, sorted. Track pantry, expiry, meals, and shopping in one place. Less waste, fewer surprises.</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Inter 600 &middot; Button / Label</div>
+    <p class="type-inter" style="font-size:14px; font-weight:600;">Download for iOS</p>
+  </div>
+
+  <h3>Outfit &mdash; Display &amp; Headings</h3>
+  <div class="type-sample">
+    <div class="type-label">Outfit 700 &middot; 48px &middot; Hero headline</div>
+    <p class="type-outfit" style="font-size:48px; font-weight:700; letter-spacing:-0.5px; line-height:1.1; color:var(--deep);">Plan smarter.<br>Shop better. Waste less.</p>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Outfit 700 &middot; 28px &middot; Section heading</div>
+    <p class="type-outfit" style="font-size:28px; font-weight:700; letter-spacing:-0.3px; color:var(--deep);">Your fridge has opinions. We write them down.</p>
+  </div>
+
+  <h3>IBM Plex Mono &mdash; Code &amp; Technical</h3>
+  <div class="type-sample">
+    <div class="type-label">IBM Plex Mono 400 &middot; 13px</div>
+    <p class="type-mono" style="font-size:13px; font-weight:400; color:var(--text-secondary);">--gs-brand-primary: #0a4d3e;</p>
+  </div>
+
+  <h3>Patrick Hand &mdash; Handwriting</h3>
+  <div class="type-sample" style="background:var(--cream);">
+    <div class="type-label">Patrick Hand 400 &middot; 24px &middot; Decorative notes</div>
+    <p class="type-hand" style="font-size:24px; font-weight:400; color:var(--deep);">eggs / oat milk / ??? something green / (call mom)</p>
+  </div>
+
+  <h3>Font Weights</h3>
+  <div class="weight-row">
+    <div class="weight-item">
+      <div class="num">400</div>
+      <p class="type-inter" style="font-size:18px; font-weight:400;">Regular</p>
+    </div>
+    <div class="weight-item">
+      <div class="num">500</div>
+      <p class="type-inter" style="font-size:18px; font-weight:500;">Medium</p>
+    </div>
+    <div class="weight-item">
+      <div class="num">600</div>
+      <p class="type-inter" style="font-size:18px; font-weight:600;">Semibold</p>
+    </div>
+    <div class="weight-item">
+      <div class="num">700</div>
+      <p class="type-inter" style="font-size:18px; font-weight:700;">Bold</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 3. LOGO ═══════════ -->
+<section>
+  <h2>Logo</h2>
+  <p class="section-desc">The GrubShelf identity consists of an app icon and a lowercase wordmark. They can be used together (lockup) or separately.</p>
+
+  <h3>App Icon</h3>
+  <div class="icon-spec">
+    <img src="grubshelf-app-icon-1024.png" alt="GrubShelf app icon" width="96" height="96">
+    <div class="icon-spec-text">
+      <dl>
+        <dt>Master file</dt>
+        <dd>grubshelf-app-icon-1024.png (1024 &times; 1024)</dd>
+        <dt>Corner radius</dt>
+        <dd>22% (iOS standard)</dd>
+        <dt>Clear space</dt>
+        <dd>Minimum 25% of icon width on all sides</dd>
+        <dt>Minimum size</dt>
+        <dd>24px (digital), 10mm (print)</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h3>Lockup Variants (Icon + Wordmark)</h3>
+  <div class="logo-grid">
+    <div class="logo-card">
+      <div class="logo-preview light-bg">
+        <img src="wordmark/grubshelf-lockup-teal-on-light-2400w.png" alt="Teal on light lockup">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Teal on Light</div>
+        <div class="logo-meta-file">grubshelf-lockup-teal-on-light (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview dark-bg">
+        <img src="wordmark/grubshelf-lockup-mint-on-dark-2400w.png" alt="Mint on dark lockup">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Mint on Dark</div>
+        <div class="logo-meta-file">grubshelf-lockup-mint-on-dark (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview dark-bg">
+        <img src="wordmark/grubshelf-lockup-white-2400w.png" alt="White lockup">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">White</div>
+        <div class="logo-meta-file">grubshelf-lockup-white (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview white-bg">
+        <img src="wordmark/grubshelf-lockup-neutral-dark-2400w.png" alt="Neutral dark lockup">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Neutral Dark</div>
+        <div class="logo-meta-file">grubshelf-lockup-neutral-dark (.svg / -2400w.png)</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Wordmark Only</h3>
+  <div class="logo-grid">
+    <div class="logo-card">
+      <div class="logo-preview light-bg">
+        <img src="wordmark/grubshelf-wordmark-teal-on-light-2400w.png" alt="Teal wordmark">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Teal on Light</div>
+        <div class="logo-meta-file">grubshelf-wordmark-teal-on-light (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview dark-bg">
+        <img src="wordmark/grubshelf-wordmark-mint-on-dark-2400w.png" alt="Mint wordmark">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Mint on Dark</div>
+        <div class="logo-meta-file">grubshelf-wordmark-mint-on-dark (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview dark-bg">
+        <img src="wordmark/grubshelf-wordmark-white-2400w.png" alt="White wordmark">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">White</div>
+        <div class="logo-meta-file">grubshelf-wordmark-white (.svg / -2400w.png)</div>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-preview white-bg">
+        <img src="wordmark/grubshelf-wordmark-neutral-dark-2400w.png" alt="Neutral dark wordmark">
+      </div>
+      <div class="logo-meta">
+        <div class="logo-meta-name">Neutral Dark</div>
+        <div class="logo-meta-file">grubshelf-wordmark-neutral-dark (.svg / -2400w.png)</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Usage Rules</h3>
+  <div class="rules-grid">
+    <div class="rule-card rule-do">
+      <div class="rule-label">Do</div>
+      <ul>
+        <li>Use the provided logo files without modification</li>
+        <li>Maintain minimum clear space around the logo</li>
+        <li>Use teal-on-light for light backgrounds</li>
+        <li>Use white or mint-on-dark for dark backgrounds</li>
+        <li>Keep the wordmark lowercase</li>
+      </ul>
+    </div>
+    <div class="rule-card rule-dont">
+      <div class="rule-label">Don't</div>
+      <ul>
+        <li>Rotate, skew, or distort the logo</li>
+        <li>Change the logo colors</li>
+        <li>Add drop shadows, outlines, or effects</li>
+        <li>Place on busy or low-contrast backgrounds</li>
+        <li>Capitalise the wordmark ("GrubShelf" as logo text)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 4. BUTTONS & COMPONENTS ═══════════ -->
+<section>
+  <h2>Buttons &amp; Components</h2>
+  <p class="section-desc">Interactive elements use rounded corners, clear hierarchy, and the brand palette. Every button must have sufficient contrast and a visible focus state.</p>
+
+  <h3>Primary CTA</h3>
+  <div class="btn-row">
+    <div>
+      <button class="btn-primary">
+        <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download for iOS
+      </button>
+      <div class="btn-label">bg: #1d9e75 &middot; rounded-2xl &middot; px-8 py-3 &middot; min-h-12</div>
+    </div>
+  </div>
+
+  <h3>Secondary &amp; Accent Buttons</h3>
+  <div class="btn-row">
+    <div>
+      <button class="btn-secondary">Learn More</button>
+      <div class="btn-label">bg: #04342c &middot; rounded-2xl</div>
+    </div>
+    <div>
+      <button class="btn-accent">Open GrubShelf &rarr;</button>
+      <div class="btn-label">bg: #e8a020 &middot; rounded-lg &middot; Email CTA</div>
+    </div>
+  </div>
+
+  <h3>Badges &amp; Labels</h3>
+  <div class="btn-row">
+    <span class="badge badge-amber">Company Updates</span>
+    <span class="badge badge-green">New Feature</span>
+    <span class="badge badge-pill">What's New</span>
+  </div>
+
+  <h3>Input Field</h3>
+  <div class="input-demo">
+    <input type="email" placeholder="you@example.com">
+    <div class="btn-label" style="margin-top:8px;">rounded-2xl &middot; border: --gs-border-secondary &middot; focus-ring: #1d9e75</div>
+  </div>
+
+  <h3>Feature Card</h3>
+  <div class="card-demo">
+    <h4>Smart Pantry Deduction</h4>
+    <p>Weekly perishables, bulk staples, and spice cabinet items are tracked with separate cadences, so you only see what you need.</p>
+  </div>
+  <div class="btn-label">rounded-card (14px) &middot; border-left: 4px solid #e8a020</div>
+</section>
+
+<!-- ═══════════ 5. SPACING & LAYOUT ═══════════ -->
+<section>
+  <h2>Spacing &amp; Layout</h2>
+  <p class="section-desc">Consistent spacing and border-radius values create visual rhythm across the product and marketing pages.</p>
+
+  <h3>Border Radius</h3>
+  <table class="spacing-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Usage</th><th>Preview</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>rounded-badge</code></td>
+        <td>6px</td>
+        <td>Section labels, small badges</td>
+        <td><span class="radius-preview" style="border-radius:6px; width:36px; height:36px;"></span></td>
+      </tr>
+      <tr>
+        <td><code>rounded-lg</code></td>
+        <td>8px</td>
+        <td>Email buttons</td>
+        <td><span class="radius-preview" style="border-radius:8px; width:36px; height:36px;"></span></td>
+      </tr>
+      <tr>
+        <td><code>rounded-brand</code></td>
+        <td>12px</td>
+        <td>Standard cards, containers</td>
+        <td><span class="radius-preview" style="border-radius:12px;"></span></td>
+      </tr>
+      <tr>
+        <td><code>rounded-card</code></td>
+        <td>14px</td>
+        <td>Feature cards, demo panels</td>
+        <td><span class="radius-preview" style="border-radius:14px;"></span></td>
+      </tr>
+      <tr>
+        <td><code>rounded-2xl</code></td>
+        <td>16px</td>
+        <td>Buttons, inputs, large cards</td>
+        <td><span class="radius-preview" style="border-radius:16px;"></span></td>
+      </tr>
+      <tr>
+        <td><code>rounded-full</code></td>
+        <td>9999px</td>
+        <td>Pill badges, avatars</td>
+        <td><span class="radius-preview" style="border-radius:9999px;"></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Content Widths</h3>
+  <table class="spacing-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>max-w-6xl</code></td><td>1152px</td><td>Page header, full-width sections</td></tr>
+      <tr><td><code>max-w-5xl</code></td><td>1024px</td><td>Primary content containers</td></tr>
+      <tr><td><code>max-w-3xl</code></td><td>768px</td><td>CTA sections, centered copy</td></tr>
+      <tr><td><code>max-w-xl</code></td><td>576px</td><td>Newsletter section, forms</td></tr>
+      <tr><td><code>max-w-md</code></td><td>448px</td><td>Form inputs, text blocks</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Section Spacing</h3>
+  <table class="spacing-table">
+    <thead>
+      <tr><th>Context</th><th>Padding</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Section vertical</td><td><code>py-24</code> to <code>py-36</code> (96px &ndash; 144px)</td></tr>
+      <tr><td>Section horizontal</td><td><code>px-6</code> (24px mobile), centered with <code>mx-auto</code></td></tr>
+      <tr><td>Between elements</td><td><code>gap-4</code> to <code>gap-16</code> (16px &ndash; 64px)</td></tr>
+      <tr><td>Email padding</td><td>40px horizontal, 36px vertical sections</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════ 6. VOICE & TONE ═══════════ -->
+<section>
+  <h2>Voice &amp; Tone</h2>
+  <p class="section-desc">GrubShelf speaks like a sharp, helpful friend &mdash; direct, warm, and a little witty. Never corporate. Never condescending.</p>
+
+  <h3>Principles</h3>
+  <div class="voice-card">
+    <div class="label">Conversational</div>
+    <blockquote>You walk into a store and forget everything you came for. So you guess. You overspend. You waste food.</blockquote>
+  </div>
+  <div class="voice-card">
+    <div class="label">Honest &amp; Direct</div>
+    <blockquote>Bring the list back &mdash; without the paper, the panic, or the walk of shame past the bakery twice.</blockquote>
+  </div>
+  <div class="voice-card">
+    <div class="label">Warm &amp; Supportive</div>
+    <blockquote>A short email every week or so. Food hacks that actually work, recipes worth keeping, and the kind of stuff that rescues that cilantro you forgot about.</blockquote>
+  </div>
+  <div class="voice-card">
+    <div class="label">Action-Oriented</div>
+    <blockquote>Plan smarter. Shop better. Waste less.</blockquote>
+  </div>
+
+  <h3>Key Phrases</h3>
+  <table class="spacing-table">
+    <thead>
+      <tr><th>Context</th><th>Copy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Tagline</td><td><strong>Your kitchen, sorted.</strong></td></tr>
+      <tr><td>Newsletter name</td><td><strong>From the Shelf</strong></td></tr>
+      <tr><td>CTA headline</td><td><strong>Plan smarter. Shop better. Waste less.</strong></td></tr>
+      <tr><td>Subscribe CTA</td><td><strong>I'm in</strong></td></tr>
+      <tr><td>Success message</td><td>You're in. First one drops soon. Check your inbox.</td></tr>
+      <tr><td>Footer line</td><td>Free forever. Unsubscribe in one click. Zero spam.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════ 7. ASSETS ═══════════ -->
+<section>
+  <h2>Assets</h2>
+  <p class="section-desc">All logo files are available in the <code>/brand/</code> directory. SVG files are preferred for web; use the 2400w PNGs for print and email.</p>
+
+  <h3>App Icon</h3>
+  <ul class="asset-list" style="background:var(--surface); border:1px solid var(--border); border-radius:12px;">
+    <li><span class="file">grubshelf-app-icon-1024.png</span> <span class="format">PNG 1024&times;1024</span></li>
+  </ul>
+
+  <h3>Lockups (Icon + Wordmark)</h3>
+  <ul class="asset-list" style="background:var(--surface); border:1px solid var(--border); border-radius:12px;">
+    <li><span class="file">wordmark/grubshelf-lockup-teal-on-light.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-teal-on-light-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-mint-on-dark.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-mint-on-dark-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-white.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-white-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-neutral-dark.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-lockup-neutral-dark-2400w.png</span> <span class="format">PNG</span></li>
+  </ul>
+
+  <h3>Wordmarks (Text Only)</h3>
+  <ul class="asset-list" style="background:var(--surface); border:1px solid var(--border); border-radius:12px;">
+    <li><span class="file">wordmark/grubshelf-wordmark-teal-on-light.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-teal-on-light-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-mint-on-dark.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-mint-on-dark-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-white.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-white-2400w.png</span> <span class="format">PNG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-neutral-dark.svg</span> <span class="format">SVG</span></li>
+    <li><span class="file">wordmark/grubshelf-wordmark-neutral-dark-2400w.png</span> <span class="format">PNG</span></li>
+  </ul>
+</section>
+
+</div>
+
+<!-- Footer -->
+<div style="background:var(--deep); padding:32px; text-align:center; margin-top:24px;">
+  <img src="grubshelf-app-icon-1024.png" alt="" width="32" height="32" style="border-radius:7px; margin-bottom:8px;">
+  <p style="color:rgba(255,255,255,0.4); font-size:12px;">&copy; 2026 GrubShelf. Internal use.</p>
+</div>
+
+</body>
+</html>

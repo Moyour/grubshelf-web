@@ -16,7 +16,7 @@ export function VfFooter() {
           <Link href="/" className="flex items-center gap-2.5">
             <Image
               src={GRUBSHELF_APP_ICON_SRC}
-              alt=""
+              alt="GrubShelf logo"
               width={128}
               height={128}
               className="h-9 w-9 rounded-[22%] object-cover"

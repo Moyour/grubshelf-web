@@ -8,11 +8,38 @@ export const metadata: Metadata = {
   description:
     "GrubShelf terms of use — the rules and conditions for using the GrubShelf app and website.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/terms" },
+};
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3010";
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Terms of Use",
+      item: `${siteUrl}/terms`,
+    },
+  ],
 };
 
 export default function TermsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <V2Header homeHref="/" featuresHref="/#vf-features" faqHref="/#v5-faq" />
       <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24">
         <Link

@@ -84,7 +84,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GrubShelf — Groceries without the guesswork",
     description,
-    url: "/",
+    url: siteUrl,
     siteName: "GrubShelf",
     locale: "en_US",
     type: "website",
@@ -103,7 +103,9 @@ export const metadata: Metadata = {
     description,
     images: ["/og.png"],
   },
+  alternates: { canonical: "/" },
   manifest: "/manifest.json",
+  robots: { index: true, follow: true },
   other: {
     "theme-color": "#04342c",
     "mobile-web-app-capable": "yes",
@@ -127,6 +129,19 @@ const jsonLd = {
   },
   image: `${siteUrl}/og.png`,
   url: siteUrl,
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "GrubShelf",
+  url: siteUrl,
+  logo: `${siteUrl}/icon-512.png`,
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@grubshelf.com",
+    contactType: "customer support",
+  },
 };
 
 const faqJsonLd = {
@@ -179,6 +194,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
         <script
           type="application/ld+json"
