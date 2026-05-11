@@ -53,6 +53,7 @@ export function V5NewsletterSection() {
 
   return (
     <section
+      id="vf-waitlist"
       className="relative overflow-hidden px-6 py-28 md:py-36"
       style={{ backgroundColor: V5.accent }}
     >

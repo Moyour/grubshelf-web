@@ -28,7 +28,7 @@ function StoryBeat({
   return (
     <div ref={ref} className="relative mx-auto max-w-6xl px-4 sm:px-6">
       <div
-        className={`grid items-center gap-10 lg:gap-16 ${
+        className={`grid items-center gap-8 lg:gap-10 ${
           reverse
             ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]"
             : "lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
@@ -72,7 +72,7 @@ function StoryBeat({
         </motion.div>
 
         <motion.div
-          className={`flex items-center justify-center ${reverse ? "lg:order-1" : ""}`}
+          className={`flex items-center justify-center ${reverse ? "lg:order-1 lg:justify-end" : "lg:justify-start"}`}
           initial={{ opacity: 0, x: reverse ? -40 : 40, scale: 0.95 }}
           animate={isInView ? { opacity: 1, x: 0, scale: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.2, ease }}

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GrubShelfLogoLockup } from "@/components/brand/grubshelf-logo-lockup";
-import { resolveAppStoreUrl } from "@/lib/marketing-nav";
 import { ThemeToggle } from "@/components/marketing/theme-toggle";
 
 export type V2HeaderProps = {
@@ -20,8 +19,6 @@ export function V2Header({
   featuresHref = "/#v2-features",
   faqHref = "/#v2-faq",
 }: V2HeaderProps = {}) {
-  const appUrl = resolveAppStoreUrl(process.env.NEXT_PUBLIC_APP_STORE_URL);
-
   return (
     <motion.header
       className="sticky top-0 z-50 border-b border-gs-border/40 bg-gs-background/70 backdrop-blur-2xl"
@@ -55,14 +52,12 @@ export function V2Header({
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
-          <a
-            href={appUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/#vf-waitlist"
             className="inline-flex items-center justify-center rounded-xl bg-gs-accent px-5 py-2.5 font-sans text-[13px] font-semibold text-gs-accent-text shadow-[0_0_20px_rgba(232,160,32,0.2)] transition-all hover:shadow-[0_0_30px_rgba(232,160,32,0.35)]"
           >
-            Try the Beta
-          </a>
+            Join the Waiting List
+          </Link>
         </div>
       </div>
     </motion.header>

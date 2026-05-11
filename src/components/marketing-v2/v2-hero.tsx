@@ -3,7 +3,6 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
-import { resolveAppStoreUrl } from "@/lib/marketing-nav";
 
 const TITLE_WORDS = ["The", "list", "on", "the", "fridge"];
 const SUB_WORDS = ["should", "follow", "you", "to", "the", "store."];
@@ -66,7 +65,6 @@ function FloatingOrb({
 }
 
 export function V2Hero() {
-  const appUrl = resolveAppStoreUrl(process.env.NEXT_PUBLIC_APP_STORE_URL);
   const reduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -80,7 +78,8 @@ export function V2Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-gs-background px-4 sm:px-6"
+      id="vf-hero"
+      className="relative flex min-h-svh scroll-mt-28 flex-col items-center justify-center overflow-hidden bg-gs-background px-4 sm:px-6"
       aria-labelledby="v2-hero-heading"
     >
       <motion.div className="pointer-events-none absolute inset-0" style={{ y: bgY }}>
@@ -153,7 +152,7 @@ export function V2Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          Install TestFlight on iPhone or iPad, then tap below to join the beta.
+          We&apos;re building something worth waiting for. Drop your email and be first in line.
         </motion.p>
 
         <motion.div
@@ -162,15 +161,13 @@ export function V2Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a
-            href={appUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/#vf-waitlist"
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gs-accent px-8 py-4 font-sans text-[15px] font-semibold text-gs-accent-text transition-transform hover:scale-[1.03] active:scale-[0.98]"
           >
             <span className="pointer-events-none absolute inset-0 rounded-xl bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
-            <span className="relative">Try the Beta</span>
-          </a>
+            <span className="relative">Join the Waiting List</span>
+          </Link>
           <Link
             href="/#vf-features"
             className="inline-flex items-center justify-center rounded-xl border-2 border-gs-border px-8 py-4 font-sans text-[15px] font-semibold text-gs-text-primary transition-colors hover:border-gs-text-primary"

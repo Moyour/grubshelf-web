@@ -150,10 +150,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do I join the beta?",
+      name: "How do I get early access?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tap 'Download for iOS' anywhere on this page — it opens TestFlight on your iPhone or iPad. Install the app, and you're in. No waitlist.",
+        text: "Drop your email in the signup form on this page and you'll be first in line when we launch.",
       },
     },
     {

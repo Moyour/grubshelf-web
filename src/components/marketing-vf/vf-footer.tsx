@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { V5 } from "@/components/marketing-v5/v5-tokens";
-import { GRUBSHELF_APP_ICON_SRC } from "@/lib/grubshelf-brand";
-import { getFooterLegalLinks, resolveAppStoreUrl } from "@/lib/marketing-nav";
+import {
+  GRUBSHELF_LOCKUP_INTRINSIC,
+  GRUBSHELF_LOCKUP_WHITE_SRC,
+} from "@/lib/grubshelf-brand";
+import { getFooterLegalLinks } from "@/lib/marketing-nav";
 
 export function VfFooter() {
   return (
@@ -13,17 +16,16 @@ export function VfFooter() {
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
         {/* Brand column */}
         <div className="flex flex-col items-center gap-3 md:items-start">
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center transition-opacity hover:opacity-90">
+            <span className="sr-only">GrubShelf</span>
             <Image
-              src={GRUBSHELF_APP_ICON_SRC}
-              alt="GrubShelf logo"
-              width={128}
-              height={128}
-              className="h-9 w-9 rounded-[22%] object-cover"
+              src={GRUBSHELF_LOCKUP_WHITE_SRC}
+              alt=""
+              width={GRUBSHELF_LOCKUP_INTRINSIC.width}
+              height={GRUBSHELF_LOCKUP_INTRINSIC.height}
+              className="h-9 w-auto sm:h-10"
+              aria-hidden
             />
-            <span className="gs-wordmark text-2xl font-semibold lowercase leading-none tracking-tight text-white/90">
-              grubshelf
-            </span>
           </Link>
           <p className="max-w-xs text-center font-sans text-sm leading-relaxed text-white/40 md:text-left">
             A quieter way through the store.
@@ -54,14 +56,12 @@ export function VfFooter() {
                 </Link>
               </li>
               <li>
-                <a
-                  href={resolveAppStoreUrl(process.env.NEXT_PUBLIC_APP_STORE_URL)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/#vf-waitlist"
                   className="font-sans text-sm text-white/50 transition hover:text-white/80"
                 >
-                  Try the Beta
-                </a>
+                  Join the Waiting List
+                </Link>
               </li>
             </ul>
           </div>
